@@ -63,7 +63,7 @@ body {
 body {
   color: #000000;
   line-height: 1;
-  font-family: "Spice Grotesk";
+  font-family: "Space Grotesk";
   font-size: 1.125rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -75,7 +75,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "Spice Grotesk";
+  font-family: "Space Grotesk";
   font-size: inherit;
 }
 
@@ -131,31 +131,273 @@ body._lock {
   padding: 0 1.25rem;
 }
 
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.3s ease 0s;
+}
 @media (min-width: 77.5em) {
-  .button {
-    margin-left: 2.8125rem;
+  .header {
+    padding-top: 4.375rem;
   }
 }
 @media (min-width: 20em) and (max-width: 77.5em) {
-  @supports (margin-left: clamp( 0.625rem , -0.1358695652rem  +  3.8043478261vw , 2.8125rem )) {
-    .button {
-      margin-left: clamp( 0.625rem , -0.1358695652rem  +  3.8043478261vw , 2.8125rem );
+  @supports (padding-top: clamp( 0.9375rem , -0.2581521739rem  +  5.9782608696vw , 4.375rem )) {
+    .header {
+      padding-top: clamp( 0.9375rem , -0.2581521739rem  +  5.9782608696vw , 4.375rem );
     }
   }
-  @supports not (margin-left: clamp( 0.625rem , -0.1358695652rem  +  3.8043478261vw , 2.8125rem )) {
-    .button {
-      margin-left: calc(0.625rem + 2.1875 * (100vw - 20rem) / 57.5);
+  @supports not (padding-top: clamp( 0.9375rem , -0.2581521739rem  +  5.9782608696vw , 4.375rem )) {
+    .header {
+      padding-top: calc(0.9375rem + 3.4375 * (100vw - 20rem) / 57.5);
     }
   }
 }
 @media (max-width: 20em) {
-  .button {
-    margin-left: 0.625rem;
+  .header {
+    padding-top: 0.9375rem;
+  }
+}
+@media (min-width: 77.5em) {
+  .header {
+    padding-bottom: 4.375rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (padding-bottom: clamp( 0.9375rem , -0.2581521739rem  +  5.9782608696vw , 4.375rem )) {
+    .header {
+      padding-bottom: clamp( 0.9375rem , -0.2581521739rem  +  5.9782608696vw , 4.375rem );
+    }
+  }
+  @supports not (padding-bottom: clamp( 0.9375rem , -0.2581521739rem  +  5.9782608696vw , 4.375rem )) {
+    .header {
+      padding-bottom: calc(0.9375rem + 3.4375 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .header {
+    padding-bottom: 0.9375rem;
+  }
+}
+.header._header-scroll {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.header__container {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 61.99875em) {
+  .header__container {
+    justify-content: space-between;
+  }
+}
+.header__logo {
+  position: relative;
+  z-index: 5;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: start;
+}
+.header__logo img {
+  max-width: 100%;
+}
+@media (max-width: 61.99875em) {
+  .header__logo {
+    flex: 0 0 190px;
   }
 }
 @media (max-width: 47.99875em) {
-  .button {
-    margin-left: 0rem;
+  .header__logo {
+    flex: 0 0 145px;
+  }
+}
+.header__action {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+}
+.menu {
+  padding: 0 0.625rem;
+}
+@media (min-width: 77.5em) {
+  .menu__body {
+    margin-right: 2.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (margin-right: clamp( 0.625rem , -0.027173913rem  +  3.2608695652vw , 2.5rem )) {
+    .menu__body {
+      margin-right: clamp( 0.625rem , -0.027173913rem  +  3.2608695652vw , 2.5rem );
+    }
+  }
+  @supports not (margin-right: clamp( 0.625rem , -0.027173913rem  +  3.2608695652vw , 2.5rem )) {
+    .menu__body {
+      margin-right: calc(0.625rem + 1.875 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .menu__body {
+    margin-right: 0.625rem;
+  }
+}
+@media (max-width: 47.99875em) {
+  .menu__body {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: -100%;
+    transition: all 0.3s ease 0s;
+    overflow: auto;
+    background-color: #ffffff;
+    gap: 2.1875rem;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    padding-bottom: 1.875rem;
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 48em) {
+  .menu__body {
+    padding-top: 8.125rem;
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 48em) {
+  @supports (padding-top: clamp( 6.25rem , 4.9107142857rem  +  6.6964285714vw , 8.125rem )) {
+    .menu__body {
+      padding-top: clamp( 6.25rem , 4.9107142857rem  +  6.6964285714vw , 8.125rem );
+    }
+  }
+  @supports not (padding-top: clamp( 6.25rem , 4.9107142857rem  +  6.6964285714vw , 8.125rem )) {
+    .menu__body {
+      padding-top: calc(6.25rem + 1.875 * (100vw - 20rem) / 28);
+    }
+  }
+}
+@media (max-width: 47.99875em) {
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+    z-index: 2;
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 48em) {
+  .menu__body::before {
+    height: 4.375rem;
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 48em) {
+  @supports (height: clamp( 3.125rem , 2.2321428571rem  +  4.4642857143vw , 4.375rem )) {
+    .menu__body::before {
+      height: clamp( 3.125rem , 2.2321428571rem  +  4.4642857143vw , 4.375rem );
+    }
+  }
+  @supports not (height: clamp( 3.125rem , 2.2321428571rem  +  4.4642857143vw , 4.375rem )) {
+    .menu__body::before {
+      height: calc(3.125rem + 1.25 * (100vw - 20rem) / 28);
+    }
+  }
+}
+@media (max-width: 47.99875em) {
+  .menu-open .menu__body {
+    left: 0;
+  }
+  .menu-open .menu__body::before {
+    left: 0;
+  }
+}
+@media (max-width: 61.99875em) and (min-width: 77.5em) {
+  .menu__body {
+    margin-right: 1.25rem;
+  }
+}
+@media (max-width: 61.99875em) and (min-width: 20em) and (max-width: 77.5em) {
+  @supports (margin-right: clamp( 0.625rem , 0.4076086957rem  +  1.0869565217vw , 1.25rem )) {
+    .menu__body {
+      margin-right: clamp( 0.625rem , 0.4076086957rem  +  1.0869565217vw , 1.25rem );
+    }
+  }
+  @supports not (margin-right: clamp( 0.625rem , 0.4076086957rem  +  1.0869565217vw , 1.25rem )) {
+    .menu__body {
+      margin-right: calc(0.625rem + 0.625 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 61.99875em) and (max-width: 20em) {
+  .menu__body {
+    margin-right: 0.625rem;
+  }
+}
+.menu__list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.9375rem;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 77.5em) {
+  .menu__list {
+    column-gap: 2.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (column-gap: clamp( 0.3125rem , -0.4483695652rem  +  3.8043478261vw , 2.5rem )) {
+    .menu__list {
+      column-gap: clamp( 0.3125rem , -0.4483695652rem  +  3.8043478261vw , 2.5rem );
+    }
+  }
+  @supports not (column-gap: clamp( 0.3125rem , -0.4483695652rem  +  3.8043478261vw , 2.5rem )) {
+    .menu__list {
+      column-gap: calc(0.3125rem + 2.1875 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .menu__list {
+    column-gap: 0.3125rem;
+  }
+}
+@media (max-width: 67.5em) {
+  .menu__list {
+    column-gap: 1.5625rem;
+  }
+}
+@media (max-width: 47.99875em) {
+  .menu__list {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.875rem;
+  }
+}
+.menu__link {
+  font-family: "Space Grotesk";
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .menu__link:hover {
+    background-color: #B9FF66;
+  }
+}
+@media (max-width: 47.99875em) {
+  .menu__link {
+    font-size: 1.875rem;
   }
 }
 
@@ -185,7 +427,7 @@ body._lock {
     position: absolute;
     width: 100%;
     height: 0.125rem;
-    background-color: #fff;
+    background-color: #000000;
   }
   .icon-menu::before {
     top: 0;
@@ -268,30 +510,30 @@ body._lock {
 }
 
 .button {
-  font-family: "Spice Grotesk";
-  background-color: #FFCC00;
-  font-size: 0.875rem;
-  line-height: 1.5;
+  background-color: transparent;
+  font-family: "Space Grotesk";
+  border: solid 1px;
+  border-radius: 0.875rem;
+  line-height: 1.4;
   text-align: center;
-  font-weight: 700;
+  font-weight: 400;
   display: inline-block;
-  padding: 0.875rem 2.875rem;
+  padding: 1.25rem 2.0625rem;
   transition: all 0.3s ease 0s;
+}
+.button span {
+  white-space: nowrap;
+}
+@media (max-width: 67.5em) {
+  .button {
+    padding: 1.25rem 1.25rem;
+  }
 }
 @media (any-hover: hover) {
   .button:hover {
-    color: #000000;
+    background-color: #B9FF66;
   }
 }
-.button._fw {
-  width: 100%;
-}
-@media (max-width: 61.99875em) {
-  .button {
-    padding: 0.875rem 1.875rem;
-  }
-}
-
 .fp-init body {
   overflow: hidden;
   touch-action: none;
