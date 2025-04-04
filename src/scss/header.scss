@@ -40,8 +40,6 @@
 		}
 		@media (max-width:$mobile){
 			flex: 0 0 145px;
-			// transform: scale(0.8);
-			// max-width: 60%;
 		}
 	}
 
@@ -96,7 +94,6 @@
 				transition: all 0.3s ease 0s;
 				width: 100%;
 				@include adaptiveValue("height", 70, 50, 2, 768, 320);
-				// background-color: #1d1c1c;
 				z-index: 2;
 			}
 			.menu-open &{
@@ -145,7 +142,6 @@
 		transition: all 0.3s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				// color:#B9FF66;
 				background-color: #B9FF66;
 			}
 		}
