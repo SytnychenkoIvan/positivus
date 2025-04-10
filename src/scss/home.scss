@@ -1,41 +1,54 @@
 .page {
-padding-top: rem(198);
 	// .page__main
-
+	
 	&__main {
 	}
 }
 .main {
+	@include adaptiveValue("padding-top", 198, 130);
 
 	// .main__container
 
 	&__container {
 		display: flex;
 		justify-content: space-between;
+		@media (max-width:$tablet){
+			justify-content: center;
+		}
 	}
 
 	// .main__content
 
 	&__content {
 		width: rem(531);
+		@media (max-width:$tablet){
+			display: flex;
+			flex-direction: column;
+		}
 	}
 
 	// .main__title
 
 	&__title {
 		font-family: $fontFamily;
-		// font-size: rem(60);
 		@include adaptiveValue("font-size", 60, 35);
 		line-height: math.div(77 , 60);
 		font-weight: 500;
 	}
-
+	&__content-image{
+		img{
+			width: 100%;
+		}
+		@media (max-width:$tablet){
+			margin-top: rem(20);
+		}
+	}
 	// .main__text
 
 	&__text {
-		padding-top: rem(35);
+		@include adaptiveValue("padding-top",35 , 15);
 		font-family: $fontFamily;
-		font-size: rem(20);
+		@include adaptiveValue("font-size", 20, 15);
 		line-height: math.div(28 , 20);
 		font-weight: 400;
 	}
@@ -43,7 +56,13 @@ padding-top: rem(198);
 	// .main__button
 
 	&__button {
-		margin-top: rem(35);
+		@include adaptiveValue("margin-top",35 , 20);
+		@media (max-width:$tablet){
+			width: rem(246);
+		}
+		@media (max-width:$mobileSmall){
+			width: 100%;
+		}
 	}
 
 	// .main__image
