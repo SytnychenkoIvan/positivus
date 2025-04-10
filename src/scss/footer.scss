@@ -6,9 +6,11 @@
 		background-color: #191A23;
 		padding: rem(55) rem(60) rem(50)	rem(60);
 		border-radius: rem(50) rem(50) rem(0) rem(0);
-		@media (max-width:$mobile){
+		@media (max-width:$tablet){
 			border-radius: rem(0) rem(0) rem(0) rem(0);
-			padding: rem(55) rem(20) rem(50)	rem(20);
+		}
+		@media (max-width:$mobile){
+			padding: rem(55) rem(20) rem(20)	rem(20);
 		}
 	}
 
@@ -27,10 +29,10 @@
 	// .footer__information
 
 	&__information {
-		padding-top: rem(50);
+		@include adaptiveValue("padding-top", 50, 15);
 		border-top: rem(1) solid #fff;
 		display: flex;
-		gap: rem(40);
+		@include adaptiveValue("gap", 40, 15);
 		font-family: $fontFamily;
 		color: #fff;
 		font-size: rem(18);
@@ -44,8 +46,12 @@
 		}
 	}
 	@media (max-width:$tablet){
+		font-size: rem(16);
 		flex-direction: column;
 		align-items: center;
+	}
+	@media (max-width:$mobile){
+		font-size: rem(14);
 	}
 	}
 }
@@ -60,6 +66,10 @@
 	&__logo {
 		@media (max-width:$tablet){
 			margin-bottom: rem(42);
+		}
+		@media (max-width:$mobile){
+			scale: 0.8;
+			text-align: center;
 		}
 	}
 
@@ -78,12 +88,11 @@
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
-		@include adaptiveValue("gap", 40, 25);
+		@include adaptiveValue("gap", 40, 15);
 		margin: rem(0) rem(20);
 		justify-content: center;
 		@media (max-width:$mobileSmall){
 			flex-direction: column;
-			// justify-content: center;
 			align-items: center;
 		}
 	}
@@ -95,16 +104,15 @@
 		line-height: math.div(23 , 18);
 		font-weight: 400;
 		color: #fff;
-		text-decoration: underline;
+		// text-decoration: underline;
 		@media (any-hover: hover){
 			&:hover{
-				text-decoration: none;
-				color: #B9FF66;
+				text-decoration: underline;
+				// color: #B9FF66;
 			}
 		}
 		@media (max-width:$mobileSmall){
 			text-decoration: none;
-			// row-gap: rem(40);
 		}
 	}
 
@@ -128,12 +136,11 @@
 	@include adaptiveValue("margin-right", 20, 5);
 }
 .main-footer {
-	padding-top: rem(66);
+	@include adaptiveValue("padding-top", 66, 35);
 	@include adaptiveValue("padding-bottom", 51 ,15 );
 	display: flex;
 	justify-content: space-between;
 	@media (max-width:$tablet){
-		// justify-content: center;
 		align-items: center;
 	}
 	@media (max-width:$mobile){
@@ -182,6 +189,9 @@
 		flex-direction: column;
 		a:not(:last-child){
 			margin-bottom: rem(20);
+			@media (max-width:$mobile){
+				margin-bottom: rem(15);
+			}
 		}
 		font-family: $fontFamily;
 		font-size: rem(18);
@@ -262,6 +272,7 @@
 	@media (max-width:$tablet){
 		width: 100%;
 	}
+	
 }
 .input::placeholder{
 	font-family: $fontFamily;

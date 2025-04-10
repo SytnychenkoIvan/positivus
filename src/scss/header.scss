@@ -3,14 +3,14 @@
 	left: 0;
 	top: 0;
 	width: 100%;
-	@include adaptiveValue("padding-top", 70, 15);
-	@include adaptiveValue("padding-bottom", 70, 15);
+	@include adaptiveValue("padding-top", 60, 15);
+	@include adaptiveValue("padding-bottom", 60, 15);
 	z-index: 100;
 	transition: all 0.3s ease 0s;
 	&._header-scroll{
 		padding-top: rem(20);
 		padding-bottom: rem(20);
-		background-color: rgba(0, 0, 0, 0.6);
+		background-color: rgba(0, 0, 0, 0.1);
 	}
 	// .header__container
 
@@ -142,14 +142,15 @@
 		transition: all 0.3s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				background-color: #B9FF66;
+				// background-color: #B9FF66;
+				text-decoration: underline;
 			}
 		}
 		@media (max-width:$tablet){
 			// font-size: rem(18);
 		}
 		@media (max-width:$mobile){
-			font-size: rem(30);
+			font-size: rem(25);
 		}
 	}
 }

@@ -1,1 +1,58 @@
+.page {
+padding-top: rem(198);
+	// .page__main
 
+	&__main {
+	}
+}
+.main {
+
+	// .main__container
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	// .main__content
+
+	&__content {
+		width: rem(531);
+	}
+
+	// .main__title
+
+	&__title {
+		font-family: $fontFamily;
+		// font-size: rem(60);
+		@include adaptiveValue("font-size", 60, 35);
+		line-height: math.div(77 , 60);
+		font-weight: 500;
+	}
+
+	// .main__text
+
+	&__text {
+		padding-top: rem(35);
+		font-family: $fontFamily;
+		font-size: rem(20);
+		line-height: math.div(28 , 20);
+		font-weight: 400;
+	}
+
+	// .main__button
+
+	&__button {
+		margin-top: rem(35);
+	}
+
+	// .main__image
+
+	&__image {
+		img{
+			width: 100%;
+		}
+	}
+}
+.button {
+}
